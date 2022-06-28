@@ -76,7 +76,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>vttp2022.assessmentmock.Main</mainClass>
+                <mainClass>vttp2022.assessmockmockv2.server.Main</mainClass>
               </manifest>
             </archive>
           </configuration>
