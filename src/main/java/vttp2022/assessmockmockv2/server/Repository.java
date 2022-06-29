@@ -18,9 +18,10 @@ public class Repository {
     // String repoTerms[] - splitting by :
     //    0               1
     // ./target      /opt/tmp/www
+
     String[] repoTerms = repo.split(":");
     if (repoTerms.length > 1){
-      this.docRootDirectory = repoTerms[1];
+      this.docRootDirectory = "/" + repo.replaceAll(":", "");
     } else{
       this.docRootDirectory = "/" + repo;
     }
@@ -54,5 +55,15 @@ public class Repository {
 
   public boolean isPathReadable(){
     return this.repository.canRead();
+  }
+
+  public boolean isResouceFound(String resourcePath){
+     for (File file : this.repository.listFiles()){
+        System.out.println("Repository - isResourceFound: " + file.getName());
+        if (resourcePath.substring(1).equals(file.getName())){
+          return true;
+        }
+      }
+      return false;
   }
 }
