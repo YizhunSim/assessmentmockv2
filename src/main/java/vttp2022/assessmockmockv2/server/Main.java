@@ -1,7 +1,5 @@
 package vttp2022.assessmockmockv2.server;
 
-import vttp2022.assessmockmockv2.server.HttpServer;
-
 public class Main {
     public static void main( String[] args ) {
 		 // Should check if parameter is present

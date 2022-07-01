@@ -60,14 +60,18 @@ public class Session implements Runnable{
 
 	 private String parseRequestResponse(String request) throws IOException{
     // GET<space>/index.html<space>HTTP/1.1
+		// POST<space>/index.html<space>HTTP/1.1 - SPLIT
+		//  0			   1				  2
+		// POST /index.html HTTP/1.1
     String[] requestTerms = request.split(" ");
     String restAPICommand = requestTerms[0];
     String resourceFilePath = requestTerms[1];
-    String restProtocol = requestTerms[2];
+    String HttpProtocol = requestTerms[2];
     String response = "";
     switch (restAPICommand){
       case GET:
-        response = parseGetRequest(restAPICommand, resourceFilePath, restProtocol);
+				//															a								b									c
+        response = parseGetRequest(restAPICommand, resourceFilePath, HttpProtocol);
         break;
 
       default:
@@ -75,7 +79,8 @@ public class Session implements Runnable{
     }
     return response;
   }
-
+	//																			a											b									c
+	//   																	GET										/index.html						HTTP/1.1
   private String parseGetRequest(String restCommand, String resourcePath, String httpProtocol){
     String result = "";
     String extension = "";
@@ -83,9 +88,12 @@ public class Session implements Runnable{
     // System.out.println("getResponse - restCommand: " + restCommand);
     // System.out.println("getResponse - resourcePath: " + resourcePath);
     // System.out.println("getResponse - httpProtocol: " + httpProtocol);
+
+		//																/index.html
     int indexOfResourceExtension = resourcePath.lastIndexOf('.');
     System.out.println("Index of resource: " + indexOfResourceExtension);
     if (indexOfResourceExtension > 0) {
+		//  ".html"
       extension = resourcePath.substring(indexOfResourceExtension);
       System.out.println("extension: " +extension);
     }
@@ -96,8 +104,12 @@ public class Session implements Runnable{
       resourcePath = "/index.html";
     }
 
+		System.out.println("Session - parseGetRequest: " + this.repository.getAbsolutePath());
+		///Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/opt/tmp/var/lib/www
+		//																																																 resourcePath
+		// ACCESS: /Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/opt/tmp/var/lib/www/index.html
 		String resourceAbsolutePath = this.repository.getAbsolutePath().concat(resourcePath);
-
+		// /Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/opt/tmp/var/lib/www/cur.html
 		if (this.repository.isResouceFound(resourcePath)){
 			if (extension.equals(PNGEXTENSION)){
 				  result = SUCCESS200 + ADDCONTENTTYPEIMAGE + parseResourceContentsToBytes(resourceAbsolutePath).toString();
@@ -110,7 +122,7 @@ public class Session implements Runnable{
 
     return result;
   }
-
+//									/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/opt/tmp/var/lib/www/index.html
   private byte[] parseResourceContentsToBytes(String path){
     try{
       byte[] array = Files.readAllBytes(Paths.get(path));

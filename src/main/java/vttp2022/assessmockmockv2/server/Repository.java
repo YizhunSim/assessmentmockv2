@@ -19,10 +19,19 @@ public class Repository {
     //    0               1
     // ./target      /opt/tmp/www
 
+    //   0
+    // split
+
+    //    0         1
+    // ./target /opt/tmp/www
+
+    // /Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/target/opt/tmp/www
     String[] repoTerms = repo.split(":");
     if (repoTerms.length > 1){
-      this.docRootDirectory = "/" + repo.replaceAll(":", "");
+      //                              ./target:/opt/tmp/www                 ./target/opt/tmp/www
+      this.docRootDirectory = "/" +           repo          .replaceAll(":", "");
     } else{
+      // /split
       this.docRootDirectory = "/" + repo;
     }
 

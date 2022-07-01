@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="vttp2022.assessmockmockv2.AppTest" time="0.152" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="vttp2022.assessmockmockv2.AppTest" time="0.099" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SG"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/18.0.1.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/surefire/surefirebooter13493743862914578471.jar /Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/surefire 2022-06-29T12-36-16_369-jvmRun1 surefire5960573741724158922tmp surefire_02110781669674994471tmp"/>
+    <property name="sun.java.command" value="/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/surefire/surefirebooter4209280146096489389.jar /Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/surefire 2022-06-29T15-37-00_422-jvmRun1 surefire1568656716092840764tmp surefire_08252523818476237001tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/test-classes:/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/classes:/Users/Zhun/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/Zhun/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/surefire/surefirebooter13493743862914578471.jar"/>
+    <property name="surefire.real.class.path" value="/Users/Zhun/Desktop/VTTP/vttp2022_batch2_v2/assesmentmockv2/target/surefire/surefirebooter4209280146096489389.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="18.0.1.1+0"/>
@@ -56,5 +56,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="vttp2022.assessmockmockv2.AppTest" time="0.014"/>
+  <testcase name="shouldAnswerWithTrue" classname="vttp2022.assessmockmockv2.AppTest" time="0.015"/>
 </testsuite>
